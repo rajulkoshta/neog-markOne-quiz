@@ -8,7 +8,7 @@ var userName = readlineSync.question("What is your name? ");
 console.log("________________");
 
 // welcome
-console.log(chalk.bgYellow("Welcome " + userName +
+console.log(chalk.bgCyan("Welcome " + userName +
 " to this amazing quiz to cheack whether you know about Rajul or not?")+"\n"+chalk.magenta("you are currently in level 1 proceed ......."));
 console.log("________________");
 
