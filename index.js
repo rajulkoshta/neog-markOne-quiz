@@ -1,4 +1,4 @@
-var chalk = require('chalk');
+const chalk = require('chalk');
 var readlineSync = require("readline-sync");
 
 var score = 0;
@@ -30,11 +30,11 @@ var highScore = [
 // question bank
 var questions = [{
   question:"which is my favourite color ? ",
-  answer:"navy blue",
+  answer:"blue",
 },
 {
   question:"what is my fav sad song? ",
-  answer:"raske qamar",
+  answer:"dil",
 },
 {
   question:"what is the name of my pet? ",
@@ -50,15 +50,15 @@ var questions = [{
 },
 {
   question:"what is my birthday date? ",
-  answer:"10 dec",
+  answer:"10",
 },
 {
-  question:" which food receipe I love the most? ",
+  question:"which food receipe I love the most? ",
   answer:"paneer",
 },
 {
   question:"how much I have scored in my 10th? ",
-  answer:"9 cgpa",
+  answer:"9",
 },
 ];
 
@@ -67,10 +67,10 @@ var questions = [{
 
 function play(question,answer){
   var userAnswer=readlineSync.question(question);
-  console.log(chalk.bgYellow("Player entered :" + userAnswer));
+  console.log(chalk.bgYellow("Player entered : " + userAnswer));
   if(userAnswer===answer){
-    console.log(chalk.magenta("yes, you are right"));
     score = score + 1;
+    console.log(chalk.magenta("right, your score is : " + score));
   }
   else{
     console.log(chalk.magenta("no , you are wrong"));
@@ -91,9 +91,9 @@ for(var i=0; i < questions.length ; i++){
 console.log("your final score: " + score);
 
 // if user want to know high score
-var userWantToKnow = readlineSync.question("do you want to know the high scores? ");
+var userWantToKnow = readlineSync.question("do you want to know the high scores?(y/n) ");
 var count = 0;
-if(userWantToKnow==="yes"){
+if(userWantToKnow === "y"){
 
    for(var j = 0 ; j < highScore.length ; j++){
     
